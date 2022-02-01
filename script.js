@@ -20,13 +20,15 @@ function criarBG() {
 function criarCobrinha() {
   for (i = 0; i < snake.length; i++) {
     context.fillStyle = 'purple'
-    context.fillRect(snake[i].x, snake[i].y, box, box)
+    context.fillRect(snake[i].x + 1, snake[i].y + 1, box - 2, box - 2)
   }
 }
 
 function drawFood() {
   context.fillStyle = 'red'
-  context.fillRect(food.x, food.y, box, box)
+  context.beginPath();
+  context.arc(food.x + 16, food.y + 16, 16, 0, 2 * Math.PI)
+  context.fill();
 }
 
 //quando um evento acontece, detecta e chama uma função
